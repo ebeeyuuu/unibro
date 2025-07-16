@@ -1,0 +1,87 @@
+"use client"
+
+import Link from "next/link"
+import {
+  NavigationMenu,
+  NavigationMenuList,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuTrigger,
+  NavigationMenuContent,
+} from "@/components/ui/navigation-menu"
+
+import {
+  LogInIcon,
+} from "lucide-react"
+
+interface Item {
+  title: string,
+  href: string,
+  desc: string
+}
+
+const quizItems: Item[] = [
+  {
+    title: "How it works",
+    href: "/quiz/how-it-works",
+    desc: "Learn how our quiz works.",
+  },
+  {
+    title: "Why take the quiz?",
+    href: "/quiz/why",
+    desc: "Understand the value.",
+  },
+  {
+    title: "Recent matches",
+    href: "/quiz/matches",
+    desc: "See recent suggestions.",
+  },
+  {
+    title: "Past results",
+    href: "/quiz/results",
+    desc: "Review your answers.",
+  },
+]
+
+const resourceItems = [
+  {
+    title: "Applications",
+    href: "/resources/applications",
+    desc: "Tips for strong applications.",
+  },
+  {
+    title: "Choosing majors",
+    href: "/resources/choosing-majors",
+    desc: "Find your path.",
+  },
+  {
+    title: "Financial planning",
+    href: "/resources/financial-planning",
+    desc: "Manage your funding.",
+  },
+  {
+    title: "Visa & Immigration",
+    href: "/resources/visa",
+    desc: "International student guides.",
+  },
+]
+
+export default function Navbar() {
+  return (
+    <header className="w-full border-b border-border bg-background text-foreground">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
+        <Link href="/" className="text-xl font-bold text-foreground">
+          Unibro
+        </Link>
+
+        <Link
+          href="/auth"
+          className="ml-4 inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition hover:bg-primary/80"
+        >
+          <LogInIcon className="size-4" />
+          Sign In
+        </Link>
+      </div>
+    </header>
+  )
+}

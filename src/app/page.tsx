@@ -1,7 +1,12 @@
+"use client";
+import Navbar from "./components/LandingPage/Navbar";
+import Hero from "./components/LandingPage/Hero";
+
 export default function Home() {
   return (
-    <div className="w-full h-full flex justify-center items-center">
-      <div className="text-black font-semibold text-8xl">Unibro!</div>
+    <div className="w-full flex flex-col justify-center items-center">
+      <Navbar />
+      <Hero />
     </div>
   );
 }
